@@ -5,7 +5,7 @@
   <input
     type='text'
     ng-model='reposCtrl.user.login'
-    placeholder='GH Username'    
+    placeholder='GH Username'
     class='form-control'>
   <input
     type='submit'
@@ -15,7 +15,7 @@
 
 <!-- custom directive -->
 <gh-repo
-  ng-repeat='repo in reposCtrl.list'
+  ng-repeat='repo in reposCtrl.list | reorder'
   repo='repo'
   repos='reposCtrl.list'>
 </gh-repo>

@@ -9,14 +9,32 @@
    * @return {Object} [configuration details for the directive]
    */
   function ghRepo() {
+    let $ = angular.element;  // jQuery-like goodness
     return {
       templateUrl: 'repos/gh-repo.template.html',
       restrict: 'EA', // we need to replace both elements and attributes
+      link: setupCollapse,
       scope: {
         repo: '=',
         repos: '='
       }
     };
+
+    function setupCollapse(scope, element) {
+      // $(element)
+      //   .find('section')
+      //   .on('click', function logOutput() {
+      //     // console.log('clicked me');
+      //   });
+
+      $(element)
+        .find('header')
+        .on('click', function hidePanelBody() {
+          console.log('clicked me');
+
+          $(element).find('article').toggleClass('hidden');
+        });
+    }
   }
 
 }());

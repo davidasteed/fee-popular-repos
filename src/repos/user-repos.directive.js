@@ -21,17 +21,9 @@
     };
 
     function setupCollapse(scope, element) {
-      // $(element)
-      //   .find('section')
-      //   .on('click', function logOutput() {
-      //     // console.log('clicked me');
-      //   });
-
       $(element)
         .find('header')
         .on('click', function hidePanelBody() {
-          console.log('clicked me');
-
           $(element).find('article').toggleClass('hidden');
         });
     }
